@@ -396,10 +396,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-navy text-slate-100 flex flex-col items-center justify-center relative p-6 font-sans">
+    <main className="min-h-screen bg-background text-foreground flex flex-col items-center justify-center relative p-6 font-sans transition-colors duration-500">
       
       {/* Background soft ambient radial glow in Mint Green */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-mint/10 to-transparent rounded-full filter blur-3xl pointer-events-none animate-pulse duration-[8s]" />
+      <div className="absolute bottom-1/4 right-1/4 w-[300px] h-[300px] bg-indigoPurple/5 rounded-full filter blur-3xl pointer-events-none" />
 
       {/* NutriPath Bio Central Dashboard Card */}
       <div className="w-full max-w-2xl bg-glass border border-border rounded-[32px] p-8 md:p-10 shadow-2xl relative z-10 my-8 backdrop-blur-xl">
@@ -409,14 +410,14 @@ export default function Home() {
           <div className="flex items-center justify-between border-b border-border pb-4 mb-6">
             <button
               onClick={handleBackStep}
-              className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider font-mono text-muted hover:text-white transition duration-200"
+              className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider font-mono text-muted-foreground hover:text-foreground transition duration-200"
             >
               <ChevronLeft className="h-4 w-4" />
               <span>Back</span>
             </button>
 
             {/* Stage Title */}
-            <span className="text-[10px] text-muted font-bold font-mono uppercase tracking-widest bg-white/5 border border-border px-3 py-1 rounded-full">
+            <span className="text-[10px] text-muted-foreground font-bold font-mono uppercase tracking-widest bg-foreground/5 border border-border px-3 py-1 rounded-full">
               {step === 'agreement' && 'Consent Protocol'}
               {step === 'scan-selfie' && 'Scan 1 of 2: Face'}
               {step === 'scan-food' && 'Scan 2 of 2: Meal'}
@@ -442,26 +443,26 @@ export default function Home() {
             {/* Header Logo */}
             <div className="flex flex-col items-center gap-3">
               <div className="h-16 w-16 flex items-center justify-center rounded-2xl bg-gradient-to-tr from-[#38BDF8] to-[#6366F1] shadow-xl shadow-indigoPurple/20 mb-1">
-                <Sparkles className="h-8 w-8 text-[#0B1220]" strokeWidth={2.5} />
+                <Sparkles className="h-8 w-8 text-white" strokeWidth={2.5} />
               </div>
-              <h1 className="text-4xl font-black tracking-tighter text-white font-sans">
-                ABSORB<span className="text-mint font-light">.AI</span>
+              <h1 className="text-4xl font-black tracking-tighter text-foreground font-sans uppercase italic">
+                ABSORB<span className="text-mint not-italic font-light">.AI</span>
               </h1>
-              <p className="text-muted text-xs font-semibold tracking-widest uppercase mt-0.5 font-mono">
+              <p className="text-muted-foreground text-[10px] font-bold tracking-[0.3em] uppercase mt-0.5 font-mono">
                 Osteological Stress Guard & Web Portal
               </p>
             </div>
 
             {/* Pitch Panel in Glass */}
-            <div className="glass-panel border border-border rounded-3xl p-6 flex flex-col gap-5">
+            <div className="glass-panel border border-border rounded-3xl p-6 flex flex-col gap-5 bg-foreground/5">
               <div className="flex gap-4 items-start">
                 <div className="p-2 bg-stress/10 rounded-xl border border-stress/10">
                   <Flame className="h-5 w-5 text-stress" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-sm">The Stress-Bone Connection</h3>
-                  <p className="text-muted text-xs mt-1 leading-relaxed font-sans font-medium">
-                    Fight-or-flight cortisol release shuts down digestive blood flow. Eating calcium in a stressed state blocks mineral absorption, literally leaching bone integrity over time.
+                  <h3 className="text-foreground font-bold text-sm">The Stress-Bone Connection</h3>
+                  <p className="text-muted-foreground text-xs mt-1 leading-relaxed font-sans font-medium">
+                    Fight-or-flight cortisol release shuts down digestive blood flow. Eating calcium in a stressed state blocks mineral absorption.
                   </p>
                 </div>
               </div>
@@ -473,9 +474,9 @@ export default function Home() {
                   <ShieldCheck className="h-5 w-5 text-mint" />
                 </div>
                 <div>
-                  <h3 className="text-white font-bold text-sm">The Dual-Scan Solution</h3>
-                  <p className="text-muted text-xs mt-1 leading-relaxed font-sans font-medium">
-                    Capture your facial stress metrics and food nutrients together. Predict physical bio-absorption and immediately unlock absorption with vagus breathing.
+                  <h3 className="text-foreground font-bold text-sm">The Dual-Scan Solution</h3>
+                  <p className="text-muted-foreground text-xs mt-1 leading-relaxed font-sans font-medium">
+                    Capture your facial stress metrics and food nutrients together. Predict physical bio-absorption in real-time.
                   </p>
                 </div>
               </div>
@@ -501,22 +502,21 @@ export default function Home() {
               </button>
             </div>
 
-            {/* Demo Presets Section */}
             <div className="flex flex-col gap-3 mt-2">
-              <span className="text-muted text-xs font-semibold tracking-wider uppercase font-mono">
+              <span className="text-muted-foreground text-xs font-semibold tracking-wider uppercase font-mono">
                 ⚡️ Instant Pitch / Demo Scenarios
               </span>
               {DEMO_PRESETS.map((preset) => (
                 <button
                   key={preset.id}
                   onClick={() => selectPreset(preset)}
-                  className="flex items-center justify-between glass-panel hover:border-mint/30 rounded-2xl p-4 text-left transition group"
+                  className="flex items-center justify-between glass-panel hover:border-mint/30 rounded-2xl p-4 text-left transition group border border-border"
                 >
                   <div className="flex flex-col gap-1 pr-4">
-                    <span className="text-white font-bold text-sm group-hover:text-mint transition font-sans">{preset.title}</span>
-                    <span className="text-muted text-xs font-mono">{preset.description}</span>
+                    <span className="text-foreground font-bold text-sm group-hover:text-mint transition font-sans">{preset.title}</span>
+                    <span className="text-muted-foreground text-xs font-mono">{preset.description}</span>
                   </div>
-                  <div className="bg-slate-950/40 border border-border p-2 rounded-lg group-hover:border-mint transition">
+                  <div className="bg-foreground/5 border border-border p-2 rounded-lg group-hover:border-mint transition">
                     <ArrowRight className="h-4 w-4 text-mint" />
                   </div>
                 </button>
@@ -532,21 +532,21 @@ export default function Home() {
               <div className="h-14 w-14 flex items-center justify-center rounded-2xl bg-stress/10 border border-stress/20 mb-1">
                 <Lock className="h-7 w-7 text-stress" />
               </div>
-              <h2 className="text-2xl font-black text-white text-center font-sans">Authenticity Protocol</h2>
-              <span className="text-muted text-xs text-center uppercase tracking-widest font-mono">
+              <h2 className="text-2xl font-black text-foreground text-center font-sans">Authenticity Protocol</h2>
+              <span className="text-muted-foreground text-xs text-center uppercase tracking-widest font-mono">
                 FACS Calibration Consent
               </span>
             </div>
 
             {/* Explanatory Panel on why we snap silently */}
-            <div className="glass-panel border border-border rounded-3xl p-6 flex flex-col gap-5">
+            <div className="glass-panel border border-border rounded-3xl p-6 flex flex-col gap-5 bg-foreground/5">
               <div className="flex gap-4 items-start">
                 <div className="p-2 bg-mint/10 rounded-xl flex-shrink-0 border border-mint/10">
                   <Eye className="h-5 w-5 text-mint" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-sm">Eliminate Pose Bias</h4>
-                  <p className="text-muted text-xs mt-1 leading-normal">
+                  <h4 className="text-foreground font-bold text-sm">Eliminate Pose Bias</h4>
+                  <p className="text-muted-foreground text-xs mt-1 leading-normal">
                     Conscious posing can drop facial stress cues. To detect authentic, subconscious jaw and forehead tension, the front camera will execute an autonomous calibration snapshot while you read instructions.
                   </p>
                 </div>
@@ -559,8 +559,8 @@ export default function Home() {
                   <Lock className="h-5 w-5 text-mint" />
                 </div>
                 <div>
-                  <h4 className="text-white font-bold text-sm">Encryption Secured</h4>
-                  <p className="text-muted text-xs mt-1 leading-normal">
+                  <h4 className="text-foreground font-bold text-sm">Encryption Secured</h4>
+                  <p className="text-muted-foreground text-xs mt-1 leading-normal">
                     The silent buffer is fully encrypted locally and compiled purely to extract stress coefficients, strictly abiding by HIPAA alignment guidelines. No photos are permanently stored.
                   </p>
                 </div>
@@ -571,7 +571,7 @@ export default function Home() {
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => setStep('scan-selfie')}
-                className="w-full btn-primary-gradient h-14 rounded-2xl flex items-center justify-center gap-2 font-black text-base uppercase transition duration-200"
+                className="w-full btn-primary-gradient h-14 rounded-2xl flex items-center justify-center gap-2 font-black text-base uppercase transition duration-200 text-white"
               >
                 I Agree, Calibrate
                 <ChevronRight className="h-5 w-5" strokeWidth={2.5} />
@@ -585,8 +585,8 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <div className="flex flex-col items-center">
               <span className="text-mint text-xs font-bold uppercase tracking-wider font-mono">Optical Sync</span>
-              <h2 className="text-2xl font-black text-white mt-1 font-sans">Somatic Alignment</h2>
-              <p className="text-muted text-xs text-center mt-2 max-w-xs leading-relaxed">
+              <h2 className="text-2xl font-black text-foreground mt-1 font-sans">Somatic Alignment</h2>
+              <p className="text-muted-foreground text-xs text-center mt-2 max-w-xs leading-relaxed">
                 Analyzing ocular resonance, jawline coordinates, and superficial vascular channels. Keep your expression completely neutral.
               </p>
             </div>

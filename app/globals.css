@@ -45,6 +45,13 @@
     --radius-2xl: calc(var(--radius) * 1.8);
     --radius-3xl: calc(var(--radius) * 2.2);
     --radius-4xl: calc(var(--radius) * 2.6);
+
+    --color-navy: var(--navy);
+    --color-mint: var(--mint);
+    --color-stress: var(--stress);
+    --color-indigoPurple: var(--indigoPurple);
+    --color-glass: var(--glass-bg);
+    --color-border: var(--glass-border);
 }
 
 :root {
@@ -80,6 +87,13 @@
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+
+    --navy: oklch(0.98 0 0);
+    --mint: #059669;
+    --stress: #d97706;
+    --indigoPurple: #6366f1;
+    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-border: rgba(0, 0, 0, 0.1);
 }
 
 .dark {
@@ -114,6 +128,13 @@
     --sidebar-accent-foreground: oklch(0.985 0 0);
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.556 0 0);
+
+    --navy: #0B1220;
+    --mint: #2DD4BF;
+    --stress: #FB923C;
+    --indigoPurple: #4f46e5;
+    --glass-bg: rgba(15, 23, 42, 0.8);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 @layer base {

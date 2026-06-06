@@ -116,7 +116,7 @@ export function Onboarding() {
               <div className="inline-flex p-3 rounded-2xl bg-primary/10 text-primary mb-2">
                 <User size={24} />
               </div>
-              <h2 className="text-3xl font-black tracking-tight text-white">Your Bio-Profile</h2>
+              <h2 className="text-3xl font-black tracking-tight text-foreground">Your Bio-Profile</h2>
               <p className="text-muted-foreground text-sm">We need your baseline to calculate your metabolic targets.</p>
             </div>
 
@@ -128,7 +128,7 @@ export function Onboarding() {
                   name="age" 
                   value={formData.age} 
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary/50 outline-none transition"
+                  className="w-full bg-foreground/5 border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary/50 outline-none transition"
                   placeholder="25"
                 />
               </div>
@@ -142,7 +142,7 @@ export function Onboarding() {
                       onClick={() => handleSelect('gender', (g as any))}
                       className={cn(
                         "py-3 rounded-xl text-xs font-bold uppercase tracking-wider border transition-all",
-                        formData.gender === g ? "bg-primary text-primary-foreground border-primary" : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/20"
+                        formData.gender === g ? "bg-primary text-primary-foreground border-primary" : "bg-foreground/5 text-muted-foreground border-border hover:border-border/50"
                       )}
                     >
                       {g}
@@ -158,7 +158,7 @@ export function Onboarding() {
                   name="weightKg" 
                   value={formData.weightKg} 
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary/50 outline-none transition"
+                  className="w-full bg-foreground/5 border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary/50 outline-none transition"
                   placeholder="70"
                 />
               </div>
@@ -170,7 +170,7 @@ export function Onboarding() {
                   name="heightCm" 
                   value={formData.heightCm} 
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white focus:border-primary/50 outline-none transition"
+                  className="w-full bg-foreground/5 border border-border rounded-xl px-4 py-3 text-foreground focus:border-primary/50 outline-none transition"
                   placeholder="175"
                 />
               </div>
@@ -187,7 +187,7 @@ export function Onboarding() {
                     onClick={() => handleSelect('activityLevel', (level as any))}
                     className={cn(
                       "py-3 rounded-xl text-[10px] font-bold uppercase tracking-wider border transition-all truncate px-1",
-                      formData.activityLevel === level ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/20"
+                      formData.activityLevel === level ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" : "bg-foreground/5 text-muted-foreground border-border hover:border-border/50"
                     )}
                   >
                     {level}
@@ -250,7 +250,7 @@ export function Onboarding() {
                   name="dailyBudget"
                   value={formData.dailyBudget}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-4 text-xl font-bold text-white focus:border-emerald-500/50 outline-none transition"
+                  className="w-full bg-foreground/5 border border-border rounded-xl px-4 py-4 text-xl font-bold text-foreground focus:border-emerald-500/50 outline-none transition"
                   placeholder="200"
                 />
                 <div className="absolute right-4 top-1/2 -translate-y-1/2 text-muted-foreground font-mono text-sm">ETB</div>
@@ -280,9 +280,9 @@ export function Onboarding() {
                   name="workZone"
                   value={formData.workZone}
                   onChange={handleChange}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white outline-none focus:border-emerald-500/50 transition appearance-none cursor-pointer"
+                  className="w-full bg-foreground/5 border border-border rounded-xl px-4 py-3 text-foreground outline-none focus:border-emerald-500/50 transition appearance-none cursor-pointer"
                 >
-                  {ZONES.map(z => <option key={z} value={z} className="bg-slate-900">{z}</option>)}
+                  {ZONES.map(z => <option key={z} value={z} className="bg-background">{z}</option>)}
                 </select>
               </div>
             </div>
@@ -298,7 +298,7 @@ export function Onboarding() {
                     onClick={() => handleSelect('mealsPerDay', m)}
                     className={cn(
                       "py-3 rounded-xl text-xs font-bold uppercase tracking-wider border transition-all",
-                      formData.mealsPerDay === m ? "bg-emerald-500 text-white border-emerald-500 shadow-lg shadow-emerald-500/20" : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/20"
+                      formData.mealsPerDay === m ? "bg-emerald-500 text-white border-emerald-500 shadow-lg shadow-emerald-500/20" : "bg-foreground/5 text-muted-foreground border-border hover:border-border/50"
                     )}
                   >
                     {m === 5 ? '5+' : m}
@@ -318,7 +318,7 @@ export function Onboarding() {
                     onClick={() => handleSelect('cookingFrequency', (freq as any))}
                     className={cn(
                       "py-3 rounded-xl text-xs font-bold uppercase tracking-wider border transition-all",
-                      formData.cookingFrequency === freq ? "bg-emerald-500 text-white border-emerald-500 shadow-lg shadow-emerald-500/20" : "bg-white/5 text-muted-foreground border-white/10 hover:border-white/20"
+                      formData.cookingFrequency === freq ? "bg-emerald-500 text-white border-emerald-500 shadow-lg shadow-emerald-500/20" : "bg-foreground/5 text-muted-foreground border-border hover:border-border/50"
                     )}
                   >
                     {freq}
@@ -372,43 +372,43 @@ export function Onboarding() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-1 items-center justify-center relative overflow-hidden group hover:border-primary/30 transition-colors">
+              <div className="bg-foreground/5 border border-border rounded-3xl p-6 flex flex-col gap-1 items-center justify-center relative overflow-hidden group hover:border-primary/30 transition-colors">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-primary/20 blur-xl rounded-full" />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground font-mono text-center">Daily Target</span>
-                <div className="text-5xl font-black text-white mt-1 group-hover:scale-110 transition-transform">
+                <div className="text-5xl font-black text-foreground mt-1 group-hover:scale-110 transition-transform">
                   {metrics.targetCalories}
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-primary font-mono">Calories</span>
               </div>
 
-              <div className="bg-white/5 border border-white/10 rounded-3xl p-6 flex flex-col gap-1 items-center justify-center relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
+              <div className="bg-foreground/5 border border-border rounded-3xl p-6 flex flex-col gap-1 items-center justify-center relative overflow-hidden group hover:border-emerald-500/30 transition-colors">
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-emerald-500/20 blur-xl rounded-full" />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground font-mono text-center">Daily Target</span>
-                <div className="text-5xl font-black text-white mt-1 group-hover:scale-110 transition-transform">
+                <div className="text-5xl font-black text-foreground mt-1 group-hover:scale-110 transition-transform">
                   {metrics.targetProtein}g
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-widest text-emerald-500 font-mono">Protein</span>
               </div>
             </div>
 
-            <div className="bg-slate-950/40 border border-white/5 rounded-3xl p-6 space-y-4">
+            <div className="bg-foreground/10 border border-border rounded-3xl p-6 space-y-4">
               <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-muted-foreground font-mono">
                 <span>Metabolic Breakdown</span>
-                <span className="text-white">BMR: {metrics.bmr} kcal</span>
+                <span className="text-foreground">BMR: {metrics.bmr} kcal</span>
               </div>
-              <div className="h-[1px] bg-white/5" />
+              <div className="h-[1px] bg-border" />
               <div className="space-y-3">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-primary" />
-                    <span className="text-sm font-medium text-slate-300">Daily Energy (TDEE)</span>
+                    <span className="text-sm font-medium text-muted-foreground">Daily Energy (TDEE)</span>
                   </div>
-                  <span className="text-sm font-bold text-white">{metrics.tdee}</span>
+                  <span className="text-sm font-bold text-foreground">{metrics.tdee}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-emerald-500" />
-                    <span className="text-sm font-medium text-slate-300">Goal: {formData.goal}</span>
+                    <span className="text-sm font-medium text-muted-foreground">Goal: {formData.goal}</span>
                   </div>
                   <span className={cn(
                     "text-sm font-bold",
@@ -425,7 +425,7 @@ export function Onboarding() {
                 <MapPin size={20} />
               </div>
               <div className="flex-1">
-                <p className="text-xs text-slate-300 font-medium leading-relaxed">Logistics set to <span className="text-white font-bold">{formData.homeZone}</span> and <span className="text-white font-bold">{formData.workZone}</span>.</p>
+                <p className="text-xs text-muted-foreground font-medium leading-relaxed">Logistics set to <span className="text-foreground font-bold">{formData.homeZone}</span> and <span className="text-foreground font-bold">{formData.workZone}</span>.</p>
                 <p className="text-[10px] text-muted-foreground mt-0.5 tracking-wider font-mono">BUDGET: {formData.dailyBudget} ETB • {formData.mealsPerDay} MEALS</p>
               </div>
             </div>
